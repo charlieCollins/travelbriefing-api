@@ -17,7 +17,7 @@ plugins {
     id 'java'
 }
 
-//apply plugin: 'com.github.j2objccontrib.j2objcgradle'
+apply plugin: 'com.github.j2objccontrib.j2objcgradle'
 
 
 group 'com.totsp'
@@ -47,7 +47,6 @@ task updateAndroidLibs (dependsOn: jar, type: Copy) {
 }
 
 // Plugin settings; put these at the bottom of the file.
-/*
 j2objcConfig {
     // Sets up libraries you depend on
     autoConfigureDeps true
@@ -58,4 +57,3 @@ j2objcConfig {
 
     finalConfigure()          // Must be last call to configuration
 }
-*/
