@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Travel Briefing</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hint_search">Filter places</string>
-    <string name="error_msg">There was an error, try again later.</string>
-    <string name="travel_detail_title">Travel Briefing Detail</string>
-    <string name="travel_title">Travel Briefing</string>
-</resources>

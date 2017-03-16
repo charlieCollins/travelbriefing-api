@@ -3,7 +3,7 @@ package com.totsp.travelbriefing.model;
 import com.google.common.base.MoreObjects;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * Created by cecollins on 6/28/16.

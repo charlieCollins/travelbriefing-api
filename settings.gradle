@@ -1,2 +1,2 @@
 rootProject.name = 'travelbriefing'
-include ':api', ':app-android', ':core', ':sample'
+include ':api', ':app-android'

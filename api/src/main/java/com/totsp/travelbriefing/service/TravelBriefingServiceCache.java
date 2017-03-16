@@ -1,14 +1,15 @@
 package com.totsp.travelbriefing.service;
 
+import com.google.common.base.Optional;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.google.common.collect.Lists;
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
-import rx.Observable;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Single;
 
 /**
  * Created by cecollins on 6/29/16.
@@ -48,25 +49,38 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
     }
 
     @Override
-    public Observable<List<CountryListItem>> getCountries() {
+    public Single<Optional<List<CountryListItem>>> getCountries() {
         System.out.println("TravelBriefingServiceCache getCountries");
         List<CountryListItem> countries = CACHE_COUNTRYLIST.getIfPresent(CACHE_KEY_COUNTRYLIST);
+        
+        return Single.just(Optional.of(countries));
+        
+        /*
         if (countries != null) {
             System.out.println("   CACHE HIT");
-            return Observable.just(countries);
+            return Single.just(countries);
         }
-        return Observable.empty();
+        List<CountryListItem> empty = new ArrayList<>();
+        return Single.just(empty);
+        */
     }
 
     @Override
-    public Observable<Country> getCountry(final String countryName) {
+    public Single<Optional<Country>> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCache getCountry:" + countryName);
         Country country = CACHE_COUNTRY.getIfPresent(countryName);
         if (country != null) {
+            return Single.just(Optional.of(country));
+        } 
+        return Single.just(Optional.<Country>absent());
+        
+        /*
+        if (country != null) {
             System.out.println("   CACHE HIT");
-            return Observable.just(country);
+            return Single.just(country);
         }
-        return Observable.empty();
+        return Single.just(null);
+        */
     }
 
 
