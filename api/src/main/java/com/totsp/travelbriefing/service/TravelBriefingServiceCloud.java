@@ -6,6 +6,7 @@ import com.totsp.travelbriefing.model.CountryListItem;
 
 import java.util.List;
 
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -43,9 +44,9 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
     }
 
     @Override
-    public Single<Optional<List<CountryListItem>>> getCountries() {
+    public Maybe<List<CountryListItem>> getCountries() {
         System.out.println("TravelBriefingServiceCloud getCountries");
-        Single<Optional<List<CountryListItem>>> countries = SERVICE.getCountries();
+        Maybe<List<CountryListItem>> countries = SERVICE.getCountries();
         // pipe the stream to another observable to SAVE the item in the cache
         /*
         Single<Optional<List<CountryListItem>>> countriesWithSave = countries.doOnSuccess(new Action1<Optional<List<CountryListItem>>>() {
@@ -61,9 +62,9 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
     }
 
     @Override
-    public Single<Optional<Country>> getCountry(final String countryName) {
+    public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCloud getCountry:" + countryName);
-        Single<Optional<Country>> country = SERVICE.getCountry(countryName);
+        Maybe<Country> country = SERVICE.getCountry(countryName);
         // TODO
         /*
         // pipe the stream to another observable to SAVE the item in the cache

@@ -9,6 +9,7 @@ import com.totsp.travelbriefing.model.CountryListItem;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 
 /**
@@ -49,11 +50,11 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
     }
 
     @Override
-    public Single<Optional<List<CountryListItem>>> getCountries() {
+    public Maybe<List<CountryListItem>> getCountries() {
         System.out.println("TravelBriefingServiceCache getCountries");
         List<CountryListItem> countries = CACHE_COUNTRYLIST.getIfPresent(CACHE_KEY_COUNTRYLIST);
         
-        return Single.just(Optional.of(countries));
+        return Maybe.just(countries);
         
         /*
         if (countries != null) {
@@ -66,13 +67,10 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
     }
 
     @Override
-    public Single<Optional<Country>> getCountry(final String countryName) {
+    public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCache getCountry:" + countryName);
-        Country country = CACHE_COUNTRY.getIfPresent(countryName);
-        if (country != null) {
-            return Single.just(Optional.of(country));
-        } 
-        return Single.just(Optional.<Country>absent());
+        Country country = CACHE_COUNTRY.getIfPresent(countryName);       
+        return Maybe.just(country);
         
         /*
         if (country != null) {

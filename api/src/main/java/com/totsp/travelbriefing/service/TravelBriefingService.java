@@ -6,6 +6,7 @@ import com.totsp.travelbriefing.model.CountryListItem;
 
 import java.util.List;
 
+import io.reactivex.Maybe;
 import io.reactivex.Single;
 
 /**
@@ -23,24 +24,22 @@ public class TravelBriefingService implements TravelBriefingServiceInterface {
     }
 
     @Override
-    public Single<Optional<List<CountryListItem>>> getCountries() {
+    public Maybe<List<CountryListItem>> getCountries() {
         System.out.println("TravelBriefingService getCountries");
-        Single<Optional<List<CountryListItem>>> cachedData = travelBriefingServiceCache.getCountries();
-        Single<Optional<List<CountryListItem>>> cloudData = travelBriefingServiceCloud.getCountries();
+        Maybe<List<CountryListItem>> cachedData = travelBriefingServiceCache.getCountries();
+        Maybe<List<CountryListItem>> cloudData = travelBriefingServiceCloud.getCountries();
 
         // combine concat and first (in order, only first first will be returned, so cache has precedence)
-        // TODO how to do first without null?
-        return Single.concat(cachedData, cloudData).first(null);
+        return Maybe.concat(cachedData, cloudData).firstElement();
     }
 
     @Override
-    public Single<Optional<Country>> getCountry(final String countryName) {
+    public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingService getCountry:" + countryName);
-        Single<Optional<Country>> cachedData = travelBriefingServiceCache.getCountry(countryName);
-        Single<Optional<Country>> cloudData = travelBriefingServiceCloud.getCountry(countryName);
+        Maybe<Country> cachedData = travelBriefingServiceCache.getCountry(countryName);
+        Maybe<Country> cloudData = travelBriefingServiceCloud.getCountry(countryName);
 
         // combine concat and first (in order, only first first will be returned, so cache has precedence)
-        // TODO how to do first without null?    
-        return Single.concat(cachedData, cloudData).firstOrError();
+        return Maybe.concat(cachedData, cloudData).firstElement();
     }
 }

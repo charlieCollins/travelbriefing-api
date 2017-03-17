@@ -2,11 +2,16 @@ package com.totsp.travelbriefing.service;
 
 import com.google.common.base.Optional;
 import com.totsp.travelbriefing.model.Country;
+import com.totsp.travelbriefing.model.CountryListItem;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
+import io.reactivex.Maybe;
+import io.reactivex.Observer;
 import io.reactivex.Single;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Predicate;
@@ -31,92 +36,51 @@ public class TravelBriefingServiceTest {
     @Test
     public void getCountryForReals() {
 
-        Single<Optional<Country>> kenya = service.getCountry("Kenya");
-
-        /*
-        SingleObserver<Optional<Country>> singleObserver = new SingleObserver<Optional<Country>>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-
-            }
-
-            @Override
-            public void onSuccess(Optional<Country> country) {
-                Country kenyaCountry = country.get();                
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-        };        
-        ///kenya.subscribe(singleObserver);
-        */
-        
-        TestObserver<Optional<Country>> testObserver = new TestObserver<>();
-        kenya.subscribe(testObserver);
-        
+        // NOTE that travelbriefing is a fucked API, never returns an error, just returns Netherlands or stuff it doesn't know
+        Maybe<Country> maybeCountry = service.getCountry("Kenya");
+             
+        TestObserver<Country> testObserver = new TestObserver<>();
+        maybeCountry.subscribe(testObserver);        
         
         testObserver.assertSubscribed();
         
-        testObserver.assertValue(new Predicate<Optional<Country>>() {
+        testObserver.assertValue(new Predicate<Country>() {
             @Override
-            public boolean test(@NonNull Optional<Country> countryOptional) throws Exception {
-                //Country kenyaCountry = countryOptional.get();
-                ///Assert.assertNotNull(kenyaCountry);
-                ///Assert.assertEquals("KES", kenyaCountry.getCurrency().getCode());
+            public boolean test(@NonNull Country country) throws Exception { 
+                ///System.out.println("country:" + country);
+                Assert.assertNotNull(country);
+                Assert.assertEquals("KES", country.getCurrency().getCode());
                 return true;
             }
         });
         
         testObserver.assertComplete();
-        
-        //testObserver.assertValue(Optional.of(T);
-        
-        
-        /*
-        //Optional<Country> kenyaCountry = kenya.blockingGet();
-        Assert.assertNotNull(kenyaCountry);
-        Assert.assertEquals("KES", kenyaCountry.getCurrency().getCode());
-        
-        
-        
-        List<Country> countries = testSubscriber.getOnNextEvents();
-        Country kenyaCountry = countries.get(0);
-        Assert.assertNotNull(kenyaCountry);
-        Assert.assertEquals("KES", kenyaCountry.getCurrency().getCode());
-        testSubscriber.unsubscribe();
-
-        // call it again to make sure cache is operating as expected
-        kenya = service.getCountry("Kenya");
-        kenya.subscribe(testSubscriber);
-
-        testSubscriber.assertCompleted();
-        testSubscriber.unsubscribe();
-        */
+        testObserver.dispose();
     }
 
-    /*
+   
     @Test
     public void getCountriesForReals() {
+        final Maybe<List<CountryListItem>> maybeCountryListItemList = service.getCountries();
 
-        Single<Optional<List<CountryListItem>>> countries = service.getCountries();
-        TestSubscriber<List<CountryListItem>> testSubscriber = new TestSubscriber<>();
-        countries.subscribe(testSubscriber);
-        List<List<CountryListItem>> countriesList = testSubscriber.getOnNextEvents();
-        List<CountryListItem> firstCountryList = countriesList.get(0);
+        TestObserver<List<CountryListItem>> testObserver = new TestObserver<>();
+        maybeCountryListItemList.subscribe(testObserver);
 
-        System.out.println("Countries SIZE:" + firstCountryList.size());
-        CountryListItem country = firstCountryList.get(0);
-        System.out.println("first country:" + country);
-        testSubscriber.unsubscribe();
-        testSubscriber.assertCompleted();
+        testObserver.assertSubscribed();
 
-        // check cache
-        countries = service.getCountries();
-        testSubscriber = new TestSubscriber<>();
-        testSubscriber.unsubscribe();
+        testObserver.assertValue(new Predicate<List<CountryListItem>>() {
+            @Override
+            public boolean test(@NonNull List<CountryListItem> countryListItemList) throws Exception {
+                ///System.out.println("country:" + country);
+                Assert.assertNotNull(countryListItemList);
+                Assert.assertEquals(256, countryListItemList.size());
+                return true;
+            }
+        });
+
+        testObserver.assertComplete();
+        testObserver.dispose();
+
     }
-    */
 
 }
