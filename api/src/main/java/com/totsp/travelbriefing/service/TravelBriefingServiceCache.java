@@ -1,6 +1,5 @@
 package com.totsp.travelbriefing.service;
 
-import com.google.common.base.Optional;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.totsp.travelbriefing.model.Country;
@@ -10,7 +9,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Maybe;
-import io.reactivex.Single;
 
 /**
  * Created by cecollins on 6/29/16.
@@ -19,7 +17,7 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
 
     private static final String CACHE_KEY_COUNTRYLIST = "clkk";
 
-    // TODO this cache is fairly naive, esp for Android, need to make it persist with process (and serialize to disk?)
+    // TODO cache is naive, esp for Android, make it persist with process (and serialize to disk?)
     // TODO allow cache to be configured
 
     private static final Cache<String, Country> CACHE_COUNTRY = CacheBuilder.newBuilder()
@@ -32,7 +30,7 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
     private static final Cache<String, List<CountryListItem>> CACHE_COUNTRYLIST = CacheBuilder.newBuilder()
             .maximumSize(1)
             .recordStats()
-            .expireAfterWrite(10, TimeUnit.MINUTES)
+            .expireAfterWrite(60, TimeUnit.MINUTES)
             .build();
 
 
@@ -54,31 +52,28 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
         System.out.println("TravelBriefingServiceCache getCountries");
         List<CountryListItem> countries = CACHE_COUNTRYLIST.getIfPresent(CACHE_KEY_COUNTRYLIST);
         
-        return Maybe.just(countries);
-        
-        /*
         if (countries != null) {
             System.out.println("   CACHE HIT");
-            return Single.just(countries);
+            return Maybe.just(countries);
         }
-        List<CountryListItem> empty = new ArrayList<>();
-        return Single.just(empty);
-        */
+        
+        // else empty maybe (honoring semantics of maybe, rather than empty collection)        
+        return Maybe.empty();       
     }
 
     @Override
     public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCache getCountry:" + countryName);
         Country country = CACHE_COUNTRY.getIfPresent(countryName);       
-        return Maybe.just(country);
         
-        /*
         if (country != null) {
             System.out.println("   CACHE HIT");
-            return Single.just(country);
+            return Maybe.just(country);
         }
-        return Single.just(null);
-        */
+        
+        // else return empty Maybe, honoring semantics of Maybe
+        return Maybe.empty();
+        
     }
 
 

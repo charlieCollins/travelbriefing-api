@@ -1,7 +1,6 @@
 package com.totsp.travelbriefing.service;
 
 
-import com.google.common.base.Optional;
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
 

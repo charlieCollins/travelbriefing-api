@@ -1,13 +1,13 @@
 package com.totsp.travelbriefing.service;
 
-import com.google.common.base.Optional;
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
 
 import java.util.List;
 
 import io.reactivex.Maybe;
-import io.reactivex.Single;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -65,17 +65,16 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
     public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCloud getCountry:" + countryName);
         Maybe<Country> country = SERVICE.getCountry(countryName);
-        // TODO
-        /*
-        // pipe the stream to another observable to SAVE the item in the cache
-        Observable<Country> countryWithSave = country.doOnNext(new Action1<Country>() {
+        
+        country.subscribe(new Consumer<Country>() {
             @Override
-            public void call(Country country) {
-                System.out.println("   returning country from service, cache PUT");
-                TravelBriefingServiceCache.cacheCountry(countryName, country);
+            public void accept(@NonNull Country country) throws Exception {
+                
             }
         });
-        */
+        
+                
+                
         return country;
     }
 }

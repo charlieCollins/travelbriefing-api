@@ -1,6 +1,5 @@
 package com.totsp.travelbriefing.service;
 
-import com.google.common.base.Optional;
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
 
@@ -11,8 +10,6 @@ import org.junit.Test;
 import java.util.List;
 
 import io.reactivex.Maybe;
-import io.reactivex.Observer;
-import io.reactivex.Single;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Predicate;
 import io.reactivex.observers.TestObserver;
