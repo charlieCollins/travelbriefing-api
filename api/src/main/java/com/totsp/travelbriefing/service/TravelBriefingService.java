@@ -16,9 +16,9 @@ public class TravelBriefingService implements TravelBriefingServiceInterface {
     private final TravelBriefingServiceCloud travelBriefingServiceCloud;
 
     public TravelBriefingService() {
+        System.out.println("TravelBriefingService created");
         travelBriefingServiceCache = new TravelBriefingServiceCache();
         travelBriefingServiceCloud = new TravelBriefingServiceCloud();
-        System.out.println("TravelBriefingService created");
     }
 
     @Override

@@ -18,9 +18,14 @@ sourceCompatibility = 1.7
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.11'
-    testCompile 'org.mockito:mockito-core:1.+'
-    //testCompile 'com.squareup.retrofit2:retrofit-mock:2.0.0'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.+'
+
+    // TODO get mocks or mockserver tests working
+    ///testCompile 'com.squareup.retrofit2:retrofit-mock:2.2.0'
+    ///testCompile 'org.mock-server:mockserver-netty:3.10.4'
+
     compile 'com.google.guava:guava:19.0'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.okhttp3:okhttp:3.6.0'

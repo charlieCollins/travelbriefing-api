@@ -47,34 +47,37 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
     public Maybe<List<CountryListItem>> getCountries() {
         System.out.println("TravelBriefingServiceCloud getCountries");
         Maybe<List<CountryListItem>> countries = SERVICE.getCountries();
+
         // pipe the stream to another observable to SAVE the item in the cache
-        /*
-        Single<Optional<List<CountryListItem>>> countriesWithSave = countries.doOnSuccess(new Action1<Optional<List<CountryListItem>>>() {
+        Maybe<List<CountryListItem>> countriesWithSave =
+                countries.doOnSuccess(new Consumer<List<CountryListItem>>() {
             @Override
-            public void call(Single<Optional<List<CountryListItem>>> countryList) {
-                System.out.println("   returning countryList from service, cache PUT");
-                // TODO
-                ///TravelBriefingServiceCache.cacheCountryList(countryList);
+            public void accept(@NonNull List<CountryListItem> countryListItemList) throws Exception {
+                System.out.println("   CACHE SAVE");
+                TravelBriefingServiceCache.cacheCountryList(countryListItemList);
             }
         });
-        */
-        return countries;
+
+        // must return the save observable so that the initial observable is invoked (subscribed to and run)
+        return countriesWithSave;
     }
 
     @Override
     public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCloud getCountry:" + countryName);
         Maybe<Country> country = SERVICE.getCountry(countryName);
-        
-        country.subscribe(new Consumer<Country>() {
-            @Override
-            public void accept(@NonNull Country country) throws Exception {
-                
-            }
-        });
-        
-                
-                
-        return country;
+
+        // pipe the stream to another observable to SAVE the item in the cache
+        Maybe<Country> countrySave =
+                country.doOnSuccess(new Consumer<Country>() {
+                    @Override
+                    public void accept(@NonNull Country country) throws Exception {
+                        System.out.println("   CACHE SAVE");
+                        TravelBriefingServiceCache.cacheCountry(countryName, country);
+                    }
+                });
+
+        // must return the save observable so that the initial observable is invoked (subscribed to and run)
+        return countrySave;
     }
 }

@@ -33,13 +33,20 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
             .expireAfterWrite(60, TimeUnit.MINUTES)
             .build();
 
-
     public TravelBriefingServiceCache() {
         System.out.println("TravelBriefingServiceCache created");
     }
 
     public static void cacheCountry(String name, Country country) {
         CACHE_COUNTRY.put(name, country);
+    }
+
+    public static long getCacheCountrySize() {
+        return CACHE_COUNTRY.size();
+    }
+
+    public static long getCacheCountryListSize() {
+        return CACHE_COUNTRYLIST.size();
     }
 
     public static void cacheCountryList(List<CountryListItem> countries) {
@@ -73,8 +80,5 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
         
         // else return empty Maybe, honoring semantics of Maybe
         return Maybe.empty();
-        
     }
-
-
 }

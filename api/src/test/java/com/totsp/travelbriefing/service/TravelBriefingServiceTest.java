@@ -5,6 +5,7 @@ import com.totsp.travelbriefing.model.CountryListItem;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.List;
@@ -22,42 +23,62 @@ public class TravelBriefingServiceTest {
     // NOTE this test is poorly behaved for a unit test and ACTUALLY calls the service! -- do not automate CI/CD this
     // TODO move to actual unit tests with mocks, and make functional tests separate
 
-    // TODO switch back to TravelBriefingService and won't make service call now? 
-    private TravelBriefingServiceCloud service;
+    private TravelBriefingService service;
+
+    @BeforeClass
+    public static void setUpClass() {
+        //service = new TravelBriefingService();
+    }
 
     @Before
     public void setUp() {
-        service = new TravelBriefingServiceCloud();
+        service = new TravelBriefingService();
     }
 
     @Test
     public void getCountryForReals() {
+        getCountryAndAssert();
 
-        // NOTE that travelbriefing is a fucked API, never returns an error, just returns Netherlands or stuff it doesn't know
+        // run the test again and ensure cache hit
+        getCountryAndAssert();
+        Assert.assertEquals(1, TravelBriefingServiceCache.getCacheCountrySize());
+    }
+
+    @Test
+    public void getCountriesForReals() {
+        getCountriesAndAssert();
+
+        // run the test again and ensure cache hit
+        getCountriesAndAssert();
+        Assert.assertEquals(1, TravelBriefingServiceCache.getCacheCountryListSize());
+    }
+
+    //
+    // private
+    //
+
+    private void getCountryAndAssert() {
         Maybe<Country> maybeCountry = service.getCountry("Kenya");
-             
+
         TestObserver<Country> testObserver = new TestObserver<>();
-        maybeCountry.subscribe(testObserver);        
-        
+        maybeCountry.subscribe(testObserver);
+
         testObserver.assertSubscribed();
-        
+
         testObserver.assertValue(new Predicate<Country>() {
             @Override
-            public boolean test(@NonNull Country country) throws Exception { 
-                ///System.out.println("country:" + country);
+            public boolean test(@NonNull Country country) throws Exception {
                 Assert.assertNotNull(country);
                 Assert.assertEquals("KES", country.getCurrency().getCode());
                 return true;
             }
         });
-        
+
         testObserver.assertComplete();
         testObserver.dispose();
     }
 
-   
-    @Test
-    public void getCountriesForReals() {
+    private void getCountriesAndAssert() {
         final Maybe<List<CountryListItem>> maybeCountryListItemList = service.getCountries();
 
         TestObserver<List<CountryListItem>> testObserver = new TestObserver<>();
@@ -77,7 +98,6 @@ public class TravelBriefingServiceTest {
 
         testObserver.assertComplete();
         testObserver.dispose();
-
     }
 
 }
