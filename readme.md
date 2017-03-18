@@ -12,5 +12,5 @@ This TOP LEVEL project (and readme) relate to several sub-projects herein:
 
 Further documentation is available in each subdirectory for each project.   
 
-Setup and transpilation of the api project into objective C is done via [http://j2objc.org/](J2ObjC). See the api project documentation and gradle tasks for transpilation details. 
+Setup and transpilation of the api project into objective C is done via [J2ObjC](http://j2objc.org). See the api project documentation and gradle tasks for transpilation details. 
 
