@@ -1,11 +1,16 @@
 
-*Steps to configure j2objc:*
+Example Android, iOS, and J2ObjC Project 
+----------------------------------------
 
-1) Download j2objc:
-https://github.com/google/j2objc/releases
-- it has to be version: https://github.com/google/j2objc/releases/tag/1.0.2
+This project is intended to be an example of Android and iOS dev practices that have proved useful 
+as an example to others. 
 
-2) Unzip
+This TOP LEVEL project (and readme) relate to several sub-projects herein:   
+* [api](api): plain Java project that uses RxJava2 and Retrofit to create an API client   
+* [app-android](app-android): Android project that uses API layer directly (imports JAR) 
+* [app-iOS](app-ios): iOS project that uses API layer via J2ObjC transpiled static library (created from Java project, transpiled into Objective-C)   
 
-3) Add j2objc path in your local.properties file:
-j2objc.home=/path/to/unzipped/folder/j2objc-1.0.2
+Further documentation is available in each subdirectory for each project.   
+
+Setup and transpilation of the api project into objective C is done via [http://j2objc.org/](J2ObjC). See the api project documentation and gradle tasks for transpilation details. 
+
