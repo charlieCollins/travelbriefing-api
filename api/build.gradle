@@ -56,10 +56,4 @@ task fatJar(type: Jar) {
     with jar
 }
 
-/*
-artifacts {
-    archives sourcesJar
-}
-*/
-
 // TODO write a one off task that invokes j2objc and creates static lib for iOS import from the api
