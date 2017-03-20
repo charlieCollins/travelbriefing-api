@@ -1,6 +1,30 @@
-
 Process Notes
 --------------
+
+NOTE: j2objc needs ALL the source so it can provide compiled versions to Obj-C (can't just import a class file there, or a jar, etc).
+j2objc ALSO needs the class files as it works. (confirm all this)
+
+DEFAULT with no mods (for javac)
+12 errors
+31 warnings 
+
+bunch more j2objc failures with 1.3 default
+switch to JAVAC frontend for j2objc fixes the java 8 issues 
+export J2OBJC_FRONT_END=JAVAC
+
+see sources_deps_broken.txt -- end up with 5 files that j2objc can't compile by default (from dependency source)
+these files are MODIFIED in mod_sources and need to be copied over in the target dir so j2objc can compile 
+(stuff like nio.Files missing, expected, just commented out in Android too -- should note every change and error)
+
+ONCE files are modified j2objc WORKS!!!
+Now you have .h and .m objective C files (source files)
+COMPILE THEM into a static library easiest to grok for me 
+$ cd build_output
+$ j2objcc -c -I. `find . -name '*.m'`
+$ libtool -static -o libdagger.a *.o
+
+
+
 
 This will transpile ONLY THIS PROJECT'S SOURCE and include links to dependencies that don't exist in ObjC.
 
@@ -9,6 +33,7 @@ find ./src -name "*.java" > sources.txt
 
 2. Get maven to show the classpath the compiler needs:
 mvn -X compiler:compile
+(may need to add test scope classes too?)
 
 3. Create a javac output dir
 mkdir build_javac

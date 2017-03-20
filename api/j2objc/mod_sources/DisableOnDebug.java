@@ -101,6 +101,11 @@ public class DisableOnDebug implements TestRule {
      *         otherwise.
      */
     private static boolean isDebugging(List<String> arguments) {
+
+	if (arguments == null) {
+	    return false;
+	}
+
         for (final String argument : arguments) {
             if ("-Xdebug".equals(argument)) {
                 return true;

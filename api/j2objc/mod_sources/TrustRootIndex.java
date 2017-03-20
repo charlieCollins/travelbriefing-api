@@ -67,19 +67,18 @@ public abstract class TrustRootIndex {
     }
 
     @Override public X509Certificate findByIssuerAndSignature(X509Certificate cert) {
-      
-	//try {
-        ///TrustAnchor trustAnchor = (TrustAnchor) findByIssuerAndSignatureMethod.invoke(
-        ///    trustManager, cert);
-        ///return trustAnchor != null
-        ///    ? trustAnchor.getTrustedCert()
-        ///    : null;
-	///} catch (IllegalAccessException e) {
-        ///throw new AssertionError();
-	///} catch (InvocationTargetException e) {
-        ///return null;
-	///}
-	return null;
+	//try {	  
+	  //TrustAnchor trustAnchor = (TrustAnchor) findByIssuerAndSignatureMethod.invoke(
+          //  trustManager, cert);
+        //return trustAnchor != null
+	//  ? trustAnchor.getTrustedCert()
+	//   : null;
+	//} catch (IllegalAccessException e) {
+        //throw new AssertionError();
+	//} catch (InvocationTargetException e) {
+        //return null;
+	//}
+	return null; // TODO need to look into this, just returning null here seems like a bad idea? 
     }
 
     @Override

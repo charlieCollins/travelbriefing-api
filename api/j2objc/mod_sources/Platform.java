@@ -16,13 +16,14 @@
 package retrofit2;
 
 //import android.os.Build;
-//import android.os.Handler;
+//mport android.os.Handler;
 //import android.os.Looper;
+
 import java.lang.invoke.MethodHandles.Lookup;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.concurrent.Executor;
-//import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
+import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
 
 class Platform {
   private static final Platform PLATFORM = findPlatform();
@@ -67,7 +68,7 @@ class Platform {
     throw new UnsupportedOperationException();
   }
 
-    //@IgnoreJRERequirement // Only classloaded and used on Java 8.
+  @IgnoreJRERequirement // Only classloaded and used on Java 8.
   static class Java8 extends Platform {
     @Override boolean isDefaultMethod(Method method) {
       return method.isDefault();
@@ -86,7 +87,8 @@ class Platform {
     }
   }
 
-    /* static class Android extends Platform {
+    /*
+  static class Android extends Platform {
     @Override public Executor defaultCallbackExecutor() {
       return new MainThreadExecutor();
     }

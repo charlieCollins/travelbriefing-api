@@ -1,9 +1,0 @@
-../target/dependency/com/google/common/collect/Maps.java
-../target/dependency/com/google/common/collect/Multimaps.java
-../target/dependency/io/reactivex/internal/operators/observable/ObservableReplay.java
-../target/dependency/okhttp3/internal/tls/TrustRootIndex.java
-../target/dependency/okio/Okio.java
-../target/dependency/okio/DeflaterSink.java
-../target/dependency/retrofit2/Platform.java
-../target/dependency/javax/annotation/Syntax.java
-../target/dependency/org/junit/rules/DisableOnDebug.java

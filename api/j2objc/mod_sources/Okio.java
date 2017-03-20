@@ -30,7 +30,7 @@ import java.net.SocketTimeoutException;
 //import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
+import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
 
 import static okio.Util.checkOffsetAndCount;
 
@@ -167,11 +167,11 @@ public final class Okio {
   }
 
   /** Returns a source that reads from {@code path}. */
-    // @IgnoreJRERequirement // Should only be invoked on Java 7+.
-    ///public static Source source(Path path, OpenOption... options) throws IOException {
-    ///if (path == null) throw new IllegalArgumentException("path == null");
-    ///return source(Files.newInputStream(path, options));
-    ///}
+  //@IgnoreJRERequirement // Should only be invoked on Java 7+.
+  //public static Source source(Path path, OpenOption... options) throws IOException {
+  //  if (path == null) throw new IllegalArgumentException("path == null");
+  //  return source(Files.newInputStream(path, options));
+  //}
 
   /** Returns a sink that writes to {@code file}. */
   public static Sink sink(File file) throws FileNotFoundException {
@@ -187,10 +187,10 @@ public final class Okio {
 
   /** Returns a sink that writes to {@code path}. */
   //@IgnoreJRERequirement // Should only be invoked on Java 7+.
-  ///public static Sink sink(Path path, OpenOption... options) throws IOException {
-  ///  if (path == null) throw new IllegalArgumentException("path == null");
-  ///  return sink(Files.newOutputStream(path, options));
-  ///}
+  //public static Sink sink(Path path, OpenOption... options) throws IOException {
+  //  if (path == null) throw new IllegalArgumentException("path == null");
+  //  return sink(Files.newOutputStream(path, options));
+  //}
 
   /** Returns a sink that writes nowhere. */
   public static Sink blackhole() {
