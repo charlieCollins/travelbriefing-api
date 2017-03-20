@@ -1,0 +1,58 @@
+
+Process Notes
+--------------
+
+This will transpile ONLY THIS PROJECT'S SOURCE and include links to dependencies that don't exist in ObjC.
+
+1. Create a sources file for javac:
+find ./src -name "*.java" > sources.txt
+
+2. Get maven to show the classpath the compiler needs:
+mvn -X compiler:compile
+
+3. Create a javac output dir
+mkdir build_javac
+
+4. Run javac using sources and classpath
+javac -d build_javac
+-classpath /Users/charliecollins/projects/travelbriefing-api/api/target/classes:/Users/charliecollins/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar:/Users/charliecollins/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar:/Users/charliecollins/.m2/repository/com/squareup/okhttp3/okhttp/3.6.0/okhttp-3.6.0.jar:/Users/charliecollins/.m2/repository/com/squareup/okio/okio/1.11.0/okio-1.11.0.jar:/Users/charliecollins/.m2/repository/com/squareup/okhttp3/logging-interceptor/3.6.0/logging-interceptor-3.6.0.jar:/Users/charliecollins/.m2/repository/com/squareup/retrofit2/retrofit/2.2.0/retrofit-2.2.0.jar:/Users/charliecollins/.m2/repository/com/squareup/retrofit2/converter-gson/2.2.0/converter-gson-2.2.0.jar:/Users/charliecollins/.m2/repository/com/squareup/retrofit2/adapter-rxjava2/2.2.0/adapter-rxjava2-2.2.0.jar:/Users/charliecollins/.m2/repository/io/reactivex/rxjava2/rxjava/2.0.6/rxjava-2.0.6.jar:/Users/charliecollins/.m2/repository/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar
+@sources.txt
+
+5. Replace the javac command with j2objc and change output dir to build_j2objc
+
+
+-----
+Next up need to compile all the source dependencies, and their transitive dependencies. Ugh.
+
+SHOW ALL transistive deps
+mvn depdendency:tree
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ travelbriefing-api ---
+[INFO] com.totsp:travelbriefing-api:jar:1.0-SNAPSHOT
+[INFO] +- com.google.guava:guava:jar:19.0:compile
+[INFO] +- com.google.code.gson:gson:jar:2.8.0:compile
+[INFO] +- com.squareup.okhttp3:okhttp:jar:3.6.0:compile
+[INFO] |  \- com.squareup.okio:okio:jar:1.11.0:compile
+[INFO] +- com.squareup.okhttp3:logging-interceptor:jar:3.6.0:compile
+[INFO] +- com.squareup.retrofit2:retrofit:jar:2.2.0:compile
+[INFO] +- com.squareup.retrofit2:converter-gson:jar:2.2.0:compile
+[INFO] +- com.squareup.retrofit2:adapter-rxjava2:jar:2.2.0:compile
+[INFO] +- io.reactivex.rxjava2:rxjava:jar:2.0.6:compile
+[INFO] |  \- org.reactivestreams:reactive-streams:jar:1.0.0:compile
+[INFO] \- junit:junit:jar:4.12:test
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:test
+
+GET all the dep sources
+mvn dependency:unpack-dependencies -Dclassifier=sources
+this puts all the stuff in target/dependency
+so create another sources file from there
+find ./target -name "*.java" > sources_deps.txt
+(then remove package-info.java from that -- need to automate)
+
+/Users/charliecollins/projects/j2objc/j2objc -d build_j2objc_deps @sources_deps.txt
+
+/Users/charliecollins/projects/j2objc/j2objc -d build_j2objc_deps -classpath /Users/charliecollins/projects/travelbriefing-api/api/target/classes:/Users/charliecollins/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar:/Users/charliecollins/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar:/Users/charliecollins/.m2/repository/com/squareup/okhttp3/okhttp/3.6.0/okhttp-3.6.0.jar:/Users/charliecollins/.m2/repository/com/squareup/okio/okio/1.11.0/okio-1.11.0.jar:/Users/charliecollins/.m2/repository/com/squareup/okhttp3/logging-interceptor/3.6.0/logging-interceptor-3.6.0.jar:/Users/charliecollins/.m2/repository/com/squareup/retrofit2/retrofit/2.2.0/retrofit-2.2.0.jar:/Users/charliecollins/.m2/repository/com/squareup/retrofit2/converter-gson/2.2.0/converter-gson-2.2.0.jar:/Users/charliecollins/.m2/repository/com/squareup/retrofit2/adapter-rxjava2/2.2.0/adapter-rxjava2-2.2.0.jar:/Users/charliecollins/.m2/repository/io/reactivex/rxjava2/rxjava/2.0.6/rxjava-2.0.6.jar:/Users/charliecollins/.m2/repository/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar:/Users/charliecollins/.m2/repository/com/google/code/findbugs/jsr305/3.0.1/jsr305-3.0.1.jar @sources_deps.txt
+
+
+
+
+

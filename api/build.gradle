@@ -26,7 +26,7 @@ dependencies {
     ///testCompile 'com.squareup.retrofit2:retrofit-mock:2.2.0'
     ///testCompile 'org.mock-server:mockserver-netty:3.10.4'
 
-    compile 'com.google.guava:guava:19.0'
+    compile 'com.google.guava:guava:21.0'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'

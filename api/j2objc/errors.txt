@@ -1,0 +1,44 @@
+error: ./target/dependency/com/google/common/collect/Maps.java:2884: The method and(Predicate<capture#325-of ? super Map.Entry<K,V>>, Predicate<capture#326-of ? super Map.Entry<K,V>>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Maps.java:2990: The method and(Predicate<capture#327-of ? super Map.Entry<K,V>>, Predicate<capture#328-of ? super Map.Entry<K,V>>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Maps.java:3138: The method and(Predicate<capture#329-of ? super Map.Entry<K,V>>, Predicate<capture#330-of ? super Map.Entry<K,V>>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Multimaps.java:1852: The method and(Predicate<capture#98-of ? super K>, Predicate<capture#99-of ? super K>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Multimaps.java:1897: The method and(Predicate<capture#102-of ? super K>, Predicate<capture#103-of ? super K>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Multimaps.java:1942: The method and(Predicate<capture#106-of ? super K>, Predicate<capture#107-of ? super K>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Multimaps.java:2106: The method and(Predicate<capture#118-of ? super Map.Entry<K,V>>, Predicate<capture#119-of ? super Map.Entry<K,V>>) is undefined for the type Predicates
+error: ./target/dependency/com/google/common/collect/Multimaps.java:2118: The method and(Predicate<capture#120-of ? super Map.Entry<K,V>>, Predicate<capture#121-of ? super Map.Entry<K,V>>) is undefined for the type Predicates
+error: ./target/dependency/io/reactivex/internal/operators/observable/ObservableReplay.java:126: Type mismatch: cannot convert from ConnectableObservable<capture#19-of ? extends T> to ConnectableObservable<T>
+error: ./target/dependency/okhttp3/internal/tls/TrustRootIndex.java:21: The import java.security.cert.TrustAnchor cannot be resolved
+error: ./target/dependency/okhttp3/internal/tls/TrustRootIndex.java:71: TrustAnchor cannot be resolved to a type
+error: ./target/dependency/okhttp3/internal/tls/TrustRootIndex.java:71: TrustAnchor cannot be resolved to a type
+error: ./target/dependency/okio/DeflaterSink.java:20: The import org.codehaus cannot be resolved
+error: ./target/dependency/okio/DeflaterSink.java:82: IgnoreJRERequirement cannot be resolved to a type
+error: ./target/dependency/javax/annotation/Syntax.java:43: ALWAYS cannot be resolved to a variable
+error: ./target/dependency/okio/Okio.java:28: The import java.nio.file cannot be resolved
+error: ./target/dependency/okio/Okio.java:29: The import java.nio.file cannot be resolved
+error: ./target/dependency/okio/Okio.java:30: The import java.nio.file cannot be resolved
+error: ./target/dependency/okio/Okio.java:33: The import org.codehaus cannot be resolved
+error: ./target/dependency/okio/Okio.java:170: IgnoreJRERequirement cannot be resolved to a type
+error: ./target/dependency/okio/Okio.java:171: Path cannot be resolved to a type
+error: ./target/dependency/okio/Okio.java:171: OpenOption cannot be resolved to a type
+error: ./target/dependency/okio/Okio.java:173: Files cannot be resolved
+error: ./target/dependency/okio/Okio.java:189: IgnoreJRERequirement cannot be resolved to a type
+error: ./target/dependency/okio/Okio.java:190: Path cannot be resolved to a type
+error: ./target/dependency/okio/Okio.java:190: OpenOption cannot be resolved to a type
+error: ./target/dependency/okio/Okio.java:192: Files cannot be resolved
+error: ./target/dependency/retrofit2/Platform.java:18: The import android.os.Build cannot be resolved
+error: ./target/dependency/retrofit2/Platform.java:19: The import android.os.Handler cannot be resolved
+error: ./target/dependency/retrofit2/Platform.java:20: The import android.os.Looper cannot be resolved
+error: ./target/dependency/retrofit2/Platform.java:25: The import org.codehaus cannot be resolved
+error: ./target/dependency/retrofit2/Platform.java:37: Build cannot be resolved to a variable
+error: ./target/dependency/retrofit2/Platform.java:70: IgnoreJRERequirement cannot be resolved to a type
+error: ./target/dependency/retrofit2/Platform.java:99: Handler cannot be resolved to a type
+error: ./target/dependency/retrofit2/Platform.java:99: Handler cannot be resolved to a type
+error: ./target/dependency/retrofit2/Platform.java:99: Looper cannot be resolved
+error: ./target/dependency/retrofit2/Platform.java:102: Handler cannot be resolved to a type
+error: ./target/dependency/org/junit/rules/DisableOnDebug.java:3: The import java.lang.management cannot be resolved
+error: ./target/dependency/org/junit/rules/DisableOnDebug.java:4: The import java.lang.management cannot be resolved
+error: ./target/dependency/org/junit/rules/DisableOnDebug.java:57: ManagementFactory cannot be resolved
+error: ./target/dependency/org/junit/internal/runners/statements/FailOnTimeout.java:3: The import java.lang.management cannot be resolved
+error: ./target/dependency/org/junit/internal/runners/statements/FailOnTimeout.java:4: The import java.lang.management cannot be resolved
+error: ./target/dependency/org/junit/internal/runners/statements/FailOnTimeout.java:282: ThreadMXBean cannot be resolved to a type
+error: ./target/dependency/org/junit/internal/runners/statements/FailOnTimeout.java:282: ManagementFactory cannot be resolved
