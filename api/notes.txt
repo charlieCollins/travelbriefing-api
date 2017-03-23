@@ -24,6 +24,10 @@ $ j2objcc -c -I. `find . -name '*.m'`
 $ libtool -static -o libdagger.a *.o
 
 
+IDEA: gradle has the classpath, use it with a script to compile THIS projects source files to j2obc
+then use gradle to invoke maven to get dependency sources, and THEN use gradle again to compile j2objc on DEPENDENCY sources
+the use gradle with libtool to create a static library for the dependencies, and just copy in the project source or where we cut the lib is open to interp
+
 
 
 This will transpile ONLY THIS PROJECT'S SOURCE and include links to dependencies that don't exist in ObjC.
