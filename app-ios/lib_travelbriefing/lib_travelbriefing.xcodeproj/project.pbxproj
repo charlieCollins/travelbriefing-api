@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6868251A1E843C3E0018C70F /* Water.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825061E843C3E0018C70F /* Water.m */; };
+		6868251B1E843C3E0018C70F /* Vaccination.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825081E843C3E0018C70F /* Vaccination.m */; };
+		6868251C1E843C3E0018C70F /* TravelBriefingServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868250A1E843C3E0018C70F /* TravelBriefingServiceInterface.m */; };
+		6868251D1E843C3E0018C70F /* TravelBriefingServiceCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868250C1E843C3E0018C70F /* TravelBriefingServiceCloud.m */; };
+		6868251E1E843C3E0018C70F /* TravelBriefingServiceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868250E1E843C3E0018C70F /* TravelBriefingServiceCache.m */; };
+		6868251F1E843C3E0018C70F /* TravelBriefingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825101E843C3E0018C70F /* TravelBriefingService.m */; };
+		686825201E843C3E0018C70F /* Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825121E843C3E0018C70F /* Timezone.m */; };
+		686825211E843C3E0018C70F /* Telephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825141E843C3E0018C70F /* Telephone.m */; };
+		686825221E843C3E0018C70F /* Name.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825161E843C3E0018C70F /* Name.m */; };
+		686825231E843C3E0018C70F /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825181E843C3E0018C70F /* Map.m */; };
+		686825301E843C4B0018C70F /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825241E843C4B0018C70F /* Language.m */; };
+		686825311E843C4B0018C70F /* Electricity.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825261E843C4B0018C70F /* Electricity.m */; };
+		686825321E843C4B0018C70F /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 686825281E843C4B0018C70F /* Currency.m */; };
+		686825331E843C4B0018C70F /* CountryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868252A1E843C4B0018C70F /* CountryListItem.m */; };
+		686825341E843C4B0018C70F /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868252C1E843C4B0018C70F /* Country.m */; };
+		686825351E843C4B0018C70F /* Advisory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868252E1E843C4B0018C70F /* Advisory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		686824F41E843A9D0018C70F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		680518751E8447500059E1DD /* retrofit2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = retrofit2; sourceTree = "<group>"; };
+		680518761E8447500059E1DD /* org */ = {isa = PBXFileReference; lastKnownFileType = folder; path = org; sourceTree = "<group>"; };
+		680518771E8447500059E1DD /* okio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = okio; sourceTree = "<group>"; };
+		680518781E8447500059E1DD /* okhttp3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = okhttp3; sourceTree = "<group>"; };
+		680518791E8447500059E1DD /* javax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = javax; sourceTree = "<group>"; };
+		6805187A1E8447500059E1DD /* io */ = {isa = PBXFileReference; lastKnownFileType = folder; path = io; sourceTree = "<group>"; };
+		6805187B1E8447500059E1DD /* com */ = {isa = PBXFileReference; lastKnownFileType = folder; path = com; sourceTree = "<group>"; };
+		686824F61E843A9D0018C70F /* liblib_travelbriefing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblib_travelbriefing.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		686825061E843C3E0018C70F /* Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Water.m; sourceTree = "<group>"; };
+		686825071E843C3E0018C70F /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		686825081E843C3E0018C70F /* Vaccination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vaccination.m; sourceTree = "<group>"; };
+		686825091E843C3E0018C70F /* Vaccination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vaccination.h; sourceTree = "<group>"; };
+		6868250A1E843C3E0018C70F /* TravelBriefingServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelBriefingServiceInterface.m; sourceTree = "<group>"; };
+		6868250B1E843C3E0018C70F /* TravelBriefingServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelBriefingServiceInterface.h; sourceTree = "<group>"; };
+		6868250C1E843C3E0018C70F /* TravelBriefingServiceCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelBriefingServiceCloud.m; sourceTree = "<group>"; };
+		6868250D1E843C3E0018C70F /* TravelBriefingServiceCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelBriefingServiceCloud.h; sourceTree = "<group>"; };
+		6868250E1E843C3E0018C70F /* TravelBriefingServiceCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelBriefingServiceCache.m; sourceTree = "<group>"; };
+		6868250F1E843C3E0018C70F /* TravelBriefingServiceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelBriefingServiceCache.h; sourceTree = "<group>"; };
+		686825101E843C3E0018C70F /* TravelBriefingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelBriefingService.m; sourceTree = "<group>"; };
+		686825111E843C3E0018C70F /* TravelBriefingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelBriefingService.h; sourceTree = "<group>"; };
+		686825121E843C3E0018C70F /* Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timezone.m; sourceTree = "<group>"; };
+		686825131E843C3E0018C70F /* Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timezone.h; sourceTree = "<group>"; };
+		686825141E843C3E0018C70F /* Telephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Telephone.m; sourceTree = "<group>"; };
+		686825151E843C3E0018C70F /* Telephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Telephone.h; sourceTree = "<group>"; };
+		686825161E843C3E0018C70F /* Name.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Name.m; sourceTree = "<group>"; };
+		686825171E843C3E0018C70F /* Name.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Name.h; sourceTree = "<group>"; };
+		686825181E843C3E0018C70F /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		686825191E843C3E0018C70F /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		686825241E843C4B0018C70F /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
+		686825251E843C4B0018C70F /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
+		686825261E843C4B0018C70F /* Electricity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Electricity.m; sourceTree = "<group>"; };
+		686825271E843C4B0018C70F /* Electricity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Electricity.h; sourceTree = "<group>"; };
+		686825281E843C4B0018C70F /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
+		686825291E843C4B0018C70F /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
+		6868252A1E843C4B0018C70F /* CountryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryListItem.m; sourceTree = "<group>"; };
+		6868252B1E843C4B0018C70F /* CountryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryListItem.h; sourceTree = "<group>"; };
+		6868252C1E843C4B0018C70F /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		6868252D1E843C4B0018C70F /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		6868252E1E843C4B0018C70F /* Advisory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Advisory.m; sourceTree = "<group>"; };
+		6868252F1E843C4B0018C70F /* Advisory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Advisory.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		686824F31E843A9D0018C70F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		686824ED1E843A9D0018C70F = {
+			isa = PBXGroup;
+			children = (
+				686824F81E843A9D0018C70F /* lib_travelbriefing */,
+				686824F71E843A9D0018C70F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		686824F71E843A9D0018C70F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				686824F61E843A9D0018C70F /* liblib_travelbriefing.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		686824F81E843A9D0018C70F /* lib_travelbriefing */ = {
+			isa = PBXGroup;
+			children = (
+				680518751E8447500059E1DD /* retrofit2 */,
+				680518761E8447500059E1DD /* org */,
+				680518771E8447500059E1DD /* okio */,
+				680518781E8447500059E1DD /* okhttp3 */,
+				680518791E8447500059E1DD /* javax */,
+				6805187A1E8447500059E1DD /* io */,
+				6805187B1E8447500059E1DD /* com */,
+				686825241E843C4B0018C70F /* Language.m */,
+				686825251E843C4B0018C70F /* Language.h */,
+				686825261E843C4B0018C70F /* Electricity.m */,
+				686825271E843C4B0018C70F /* Electricity.h */,
+				686825281E843C4B0018C70F /* Currency.m */,
+				686825291E843C4B0018C70F /* Currency.h */,
+				6868252A1E843C4B0018C70F /* CountryListItem.m */,
+				6868252B1E843C4B0018C70F /* CountryListItem.h */,
+				6868252C1E843C4B0018C70F /* Country.m */,
+				6868252D1E843C4B0018C70F /* Country.h */,
+				6868252E1E843C4B0018C70F /* Advisory.m */,
+				6868252F1E843C4B0018C70F /* Advisory.h */,
+				686825061E843C3E0018C70F /* Water.m */,
+				686825071E843C3E0018C70F /* Water.h */,
+				686825081E843C3E0018C70F /* Vaccination.m */,
+				686825091E843C3E0018C70F /* Vaccination.h */,
+				6868250A1E843C3E0018C70F /* TravelBriefingServiceInterface.m */,
+				6868250B1E843C3E0018C70F /* TravelBriefingServiceInterface.h */,
+				6868250C1E843C3E0018C70F /* TravelBriefingServiceCloud.m */,
+				6868250D1E843C3E0018C70F /* TravelBriefingServiceCloud.h */,
+				6868250E1E843C3E0018C70F /* TravelBriefingServiceCache.m */,
+				6868250F1E843C3E0018C70F /* TravelBriefingServiceCache.h */,
+				686825101E843C3E0018C70F /* TravelBriefingService.m */,
+				686825111E843C3E0018C70F /* TravelBriefingService.h */,
+				686825121E843C3E0018C70F /* Timezone.m */,
+				686825131E843C3E0018C70F /* Timezone.h */,
+				686825141E843C3E0018C70F /* Telephone.m */,
+				686825151E843C3E0018C70F /* Telephone.h */,
+				686825161E843C3E0018C70F /* Name.m */,
+				686825171E843C3E0018C70F /* Name.h */,
+				686825181E843C3E0018C70F /* Map.m */,
+				686825191E843C3E0018C70F /* Map.h */,
+			);
+			path = lib_travelbriefing;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		686824F51E843A9D0018C70F /* lib_travelbriefing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 686824FF1E843A9D0018C70F /* Build configuration list for PBXNativeTarget "lib_travelbriefing" */;
+			buildPhases = (
+				686824F21E843A9D0018C70F /* Sources */,
+				686824F31E843A9D0018C70F /* Frameworks */,
+				686824F41E843A9D0018C70F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lib_travelbriefing;
+			productName = lib_travelbriefing;
+			productReference = 686824F61E843A9D0018C70F /* liblib_travelbriefing.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		686824EE1E843A9D0018C70F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Charlie Collins";
+				TargetAttributes = {
+					686824F51E843A9D0018C70F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 686824F11E843A9D0018C70F /* Build configuration list for PBXProject "lib_travelbriefing" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 686824ED1E843A9D0018C70F;
+			productRefGroup = 686824F71E843A9D0018C70F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				686824F51E843A9D0018C70F /* lib_travelbriefing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		686824F21E843A9D0018C70F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				686825231E843C3E0018C70F /* Map.m in Sources */,
+				686825221E843C3E0018C70F /* Name.m in Sources */,
+				686825201E843C3E0018C70F /* Timezone.m in Sources */,
+				6868251B1E843C3E0018C70F /* Vaccination.m in Sources */,
+				686825311E843C4B0018C70F /* Electricity.m in Sources */,
+				6868251F1E843C3E0018C70F /* TravelBriefingService.m in Sources */,
+				686825211E843C3E0018C70F /* Telephone.m in Sources */,
+				686825341E843C4B0018C70F /* Country.m in Sources */,
+				686825331E843C4B0018C70F /* CountryListItem.m in Sources */,
+				6868251E1E843C3E0018C70F /* TravelBriefingServiceCache.m in Sources */,
+				686825351E843C4B0018C70F /* Advisory.m in Sources */,
+				6868251C1E843C3E0018C70F /* TravelBriefingServiceInterface.m in Sources */,
+				686825301E843C4B0018C70F /* Language.m in Sources */,
+				6868251A1E843C3E0018C70F /* Water.m in Sources */,
+				686825321E843C4B0018C70F /* Currency.m in Sources */,
+				6868251D1E843C3E0018C70F /* TravelBriefingServiceCloud.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		686824FD1E843A9D0018C70F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		686824FE1E843A9D0018C70F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		686825001E843A9D0018C70F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				FRAMEWORK_SEARCH_PATHS = "${J2OBJC_HOME}/frameworks";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
+				HEADER_SEARCH_PATHS = "${J2OBJC_HOME}/include";
+				J2OBJC_HOME = /Users/charliecollins/projects/j2objc;
+				LIBRARY_SEARCH_PATHS = "${J2OBJC_HOME}/libs";
+				OTHER_LDFLAGS = (
+					"-ljre_emul",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		686825011E843A9D0018C70F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				FRAMEWORK_SEARCH_PATHS = "${J2OBJC_HOME}/frameworks";
+				HEADER_SEARCH_PATHS = "${J2OBJC_HOME}/include";
+				J2OBJC_HOME = /Users/charliecollins/projects/j2objc;
+				LIBRARY_SEARCH_PATHS = "${J2OBJC_HOME}/libs";
+				OTHER_LDFLAGS = (
+					"-ljre_emul",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		686824F11E843A9D0018C70F /* Build configuration list for PBXProject "lib_travelbriefing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				686824FD1E843A9D0018C70F /* Debug */,
+				686824FE1E843A9D0018C70F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		686824FF1E843A9D0018C70F /* Build configuration list for PBXNativeTarget "lib_travelbriefing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				686825001E843A9D0018C70F /* Debug */,
+				686825011E843A9D0018C70F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 686824EE1E843A9D0018C70F /* Project object */;
+}
