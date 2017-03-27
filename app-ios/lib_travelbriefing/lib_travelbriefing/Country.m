@@ -11,7 +11,7 @@
 #include "J2ObjC_source.h"
 #include "Map.h"
 #include "Name.h"
-#include "SerializedName.h"
+#include "com/google/gson/annotations/SerializedName.h"
 #include "Telephone.h"
 #include "Timezone.h"
 #include "Water.h"

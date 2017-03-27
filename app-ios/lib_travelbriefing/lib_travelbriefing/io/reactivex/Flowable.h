@@ -18,7 +18,8 @@
 
 #define RESTRICT_OrgReactivestreamsPublisher 1
 #define INCLUDE_OrgReactivestreamsPublisher 1
-#include "org/reactivestreams/Publisher.h"
+
+#include "../../org/reactivestreams/Publisher.h"
 
 @class IOSClass;
 @class IOSObjectArray;

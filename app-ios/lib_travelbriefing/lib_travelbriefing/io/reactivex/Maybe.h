@@ -18,7 +18,8 @@
 
 #define RESTRICT_IoReactivexMaybeSource 1
 #define INCLUDE_IoReactivexMaybeSource 1
-#include "io/reactivex/MaybeSource.h"
+
+#include "MaybeSource.h"
 
 @class IOSClass;
 @class IOSObjectArray;

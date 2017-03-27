@@ -3,16 +3,16 @@
 //  source: src/main/java/com/totsp/travelbriefing/service/TravelBriefingServiceCloud.java
 //
 
-#include "Consumer.h"
+#include "io/reactivex/functions/Consumer.h"
 #include "Country.h"
-#include "GsonConverterFactory.h"
-#include "HttpLoggingInterceptor.h"
+#include "retrofit2/converter/gson/GsonConverterFactory.h"
+#include "okhttp3/logging/HttpLoggingInterceptor.h"
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
-#include "Maybe.h"
-#include "OkHttpClient.h"
-#include "Retrofit.h"
-#include "RxJava2CallAdapterFactory.h"
+#include "io/reactivex/Maybe.h"
+#include "okhttp3/OkHttpClient.h"
+#include "retrofit2/Retrofit.h"
+#include "retrofit2/adapter/rxjava2/RxJava2CallAdapterFactory.h"
 #include "TravelBriefingServiceCache.h"
 #include "TravelBriefingServiceCloud.h"
 #include "TravelBriefingServiceInterface.h"

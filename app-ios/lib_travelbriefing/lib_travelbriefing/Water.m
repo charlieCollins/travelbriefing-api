@@ -6,7 +6,7 @@
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
-#include "SerializedName.h"
+#include "com/google/gson/annotations/SerializedName.h"
 #include "Water.h"
 #include "com/google/common/base/MoreObjects.h"
 #include "java/lang/annotation/Annotation.h"

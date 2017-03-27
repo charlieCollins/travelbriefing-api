@@ -3,9 +3,9 @@
 //  source: src/main/java/com/totsp/travelbriefing/service/TravelBriefingService.java
 //
 
-#include "Flowable.h"
+#include "io/reactivex/Flowable.h"
 #include "J2ObjC_source.h"
-#include "Maybe.h"
+#include "io/reactivex/Maybe.h"
 #include "TravelBriefingService.h"
 #include "TravelBriefingServiceCache.h"
 #include "TravelBriefingServiceCloud.h"

@@ -205,7 +205,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComGoogleCommonCacheCacheBuilder)
 
 #define RESTRICT_ComGoogleCommonCacheRemovalListener 1
 #define INCLUDE_ComGoogleCommonCacheRemovalListener 1
-#include "com/google/common/cache/RemovalListener.h"
+#include "RemovalListener.h"
 
 @class ComGoogleCommonCacheRemovalNotification;
 @class IOSObjectArray;
@@ -257,7 +257,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComGoogleCommonCacheCacheBuilder_NullListener)
 
 #define RESTRICT_ComGoogleCommonCacheWeigher 1
 #define INCLUDE_ComGoogleCommonCacheWeigher 1
-#include "com/google/common/cache/Weigher.h"
+#include "Weigher.h"
 
 @class IOSObjectArray;
 

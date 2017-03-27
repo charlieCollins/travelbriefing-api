@@ -23,6 +23,7 @@
 		686825331E843C4B0018C70F /* CountryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868252A1E843C4B0018C70F /* CountryListItem.m */; };
 		686825341E843C4B0018C70F /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868252C1E843C4B0018C70F /* Country.m */; };
 		686825351E843C4B0018C70F /* Advisory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868252E1E843C4B0018C70F /* Advisory.m */; };
+		68945D751E8584A20020011F /* TravelBriefingServiceInterface.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6868250B1E843C3E0018C70F /* TravelBriefingServiceInterface.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				68945D751E8584A20020011F /* TravelBriefingServiceInterface.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 686824F11E843A9D0018C70F /* Build configuration list for PBXProject "lib_travelbriefing" */;
+			buildConfigurationList = 686824F11E843A9D0018C70F /* Build configuration list for PBXProject "travelbriefing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -324,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				FRAMEWORK_SEARCH_PATHS = "${J2OBJC_HOME}/frameworks";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				HEADER_SEARCH_PATHS = "${J2OBJC_HOME}/include";
@@ -343,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				FRAMEWORK_SEARCH_PATHS = "${J2OBJC_HOME}/frameworks";
 				HEADER_SEARCH_PATHS = "${J2OBJC_HOME}/include";
 				J2OBJC_HOME = /Users/charliecollins/projects/j2objc;
@@ -360,7 +364,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		686824F11E843A9D0018C70F /* Build configuration list for PBXProject "lib_travelbriefing" */ = {
+		686824F11E843A9D0018C70F /* Build configuration list for PBXProject "travelbriefing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				686824FD1E843A9D0018C70F /* Debug */,

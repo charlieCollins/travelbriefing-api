@@ -18,7 +18,8 @@
 
 #define RESTRICT_Retrofit2Converter 1
 #define INCLUDE_Retrofit2Converter_Factory 1
-#include "retrofit2/Converter.h"
+
+#include "../../Converter.h"
 
 @class ComGoogleGsonGson;
 @class IOSObjectArray;

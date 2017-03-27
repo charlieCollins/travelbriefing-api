@@ -18,7 +18,7 @@
 
 #define RESTRICT_Retrofit2CallAdapter 1
 #define INCLUDE_Retrofit2CallAdapter_Factory 1
-#include "retrofit2/CallAdapter.h"
+#include "../../CallAdapter.h"
 
 @class IOSObjectArray;
 @class IoReactivexScheduler;

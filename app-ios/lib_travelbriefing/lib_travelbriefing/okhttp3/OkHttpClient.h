@@ -18,11 +18,11 @@
 
 #define RESTRICT_Okhttp3Call 1
 #define INCLUDE_Okhttp3Call_Factory 1
-#include "okhttp3/Call.h"
+#include "Call.h"
 
 #define RESTRICT_Okhttp3WebSocket 1
 #define INCLUDE_Okhttp3WebSocket_Factory 1
-#include "okhttp3/WebSocket.h"
+#include "WebSocket.h"
 
 @class JavaNetProxy;
 @class JavaNetProxySelector;

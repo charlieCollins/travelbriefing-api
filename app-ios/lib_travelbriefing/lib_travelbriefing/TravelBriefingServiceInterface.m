@@ -3,11 +3,11 @@
 //  source: src/main/java/com/totsp/travelbriefing/service/TravelBriefingServiceInterface.java
 //
 
-#include "GET.h"
+#include "retrofit2/http/GET.h"
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
-#include "Path.h"
+#include "retrofit2/http/Path.h"
 #include "TravelBriefingServiceInterface.h"
 #include "java/lang/annotation/Annotation.h"
 

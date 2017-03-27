@@ -18,7 +18,9 @@
 
 #define RESTRICT_Okhttp3Interceptor 1
 #define INCLUDE_Okhttp3Interceptor 1
-#include "okhttp3/Interceptor.h"
+
+// TODO FIXME
+#include "../Interceptor.h"
 
 @class Okhttp3LoggingHttpLoggingInterceptor_Level;
 @class Okhttp3Response;

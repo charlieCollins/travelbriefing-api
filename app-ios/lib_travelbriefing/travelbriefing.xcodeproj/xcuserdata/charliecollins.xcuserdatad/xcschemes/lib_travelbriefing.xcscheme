@@ -17,7 +17,7 @@
                BlueprintIdentifier = "686824F51E843A9D0018C70F"
                BuildableName = "liblib_travelbriefing.a"
                BlueprintName = "lib_travelbriefing"
-               ReferencedContainer = "container:lib_travelbriefing.xcodeproj">
+               ReferencedContainer = "container:travelbriefing.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,7 +48,7 @@
             BlueprintIdentifier = "686824F51E843A9D0018C70F"
             BuildableName = "liblib_travelbriefing.a"
             BlueprintName = "lib_travelbriefing"
-            ReferencedContainer = "container:lib_travelbriefing.xcodeproj">
+            ReferencedContainer = "container:travelbriefing.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,7 +66,7 @@
             BlueprintIdentifier = "686824F51E843A9D0018C70F"
             BuildableName = "liblib_travelbriefing.a"
             BlueprintName = "lib_travelbriefing"
-            ReferencedContainer = "container:lib_travelbriefing.xcodeproj">
+            ReferencedContainer = "container:travelbriefing.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

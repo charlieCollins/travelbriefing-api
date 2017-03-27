@@ -7,7 +7,8 @@
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "Map.h"
-#include "SerializedName.h"
+// had to manually correct this import, which smells???
+#include "com/google/gson/annotations/SerializedName.h"
 #include "com/google/common/base/MoreObjects.h"
 #include "java/lang/annotation/Annotation.h"
 
