@@ -7,10 +7,10 @@ as an example to others.
 
 This TOP LEVEL project (and readme) relate to several sub-projects herein:   
 * [api](api): plain Java project that uses RxJava2 and Retrofit to create an API client   
+* [apimin](apimin): plain Java project that provides only model objects and api interface (no rxjava and no retrofit)
 * [app-android](app-android): Android project that uses API layer directly (imports JAR) 
-* [app-iOS](app-ios): iOS project that uses API layer via J2ObjC transpiled static library   
+* [app-iOS](app-ios): iOS project that uses API layer via J2ObjC transpiled static library - TODO   
 (created from Java project, transpiled into Objective-C)  
-(Xcode subprojects are [app_travelbriefing](app-ios/app_travelbriefing) and [lib_travelbriefing](app-ios/lib_travelbriefing) respectively)   
 
 Further documentation is available in each subdirectory for each project.   
 
