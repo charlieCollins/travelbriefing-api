@@ -16,10 +16,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
 import com.totsp.travelbriefing.service.TravelBriefingService;
+import com.totsp.travelbriefing.service.TravelBriefingServiceInterface;
+
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 import java.util.List;
@@ -80,30 +82,15 @@ public class ItemListActivity extends AppCompatActivity {
 
     private void loadData(@NonNull final RecyclerView recyclerView) {
 
+        
         // TODO check is connected
         // TODO rxandroid dep?
         // TODO rxandroid pattern
-        TravelBriefingService service = ((TravelBriefingApplication)getApplication()).getService();
-        Subscriber<List<CountryListItem>> subscriber = new Subscriber<List<CountryListItem>>() {
-            @Override
-            public void onCompleted() {
-                log("subscriber onCompleted");
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                Log.e(TAG, "subscriber error", e);
-            }
-
-            @Override
-            public void onNext(List<CountryListItem> countries) {
-                recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(countries));
-            }
-        };
-        service.getCountries()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(subscriber);
+        // TODO not on main thread
+        //TravelBriefingServiceInterface service = ((TravelBriefingApplication)getApplication()).getService();
+        //List<CountryListItem> countries = service.getCountries();
+        
+        
     }
 
     private void log(String message) {

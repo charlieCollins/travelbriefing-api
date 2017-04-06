@@ -2,6 +2,7 @@ package com.totsp.travelbriefing_android;
 
 import android.app.Application;
 import com.totsp.travelbriefing.service.TravelBriefingServiceInterface;
+import com.totsp.travelbriefing_android.service.TravelBriefingServiceImpl;
 
 /**
  * Created by cecollins on 7/1/16.
@@ -16,7 +17,8 @@ public class TravelBriefingApplication extends Application {
    @Override
     public void onCreate() {
        super.onCreate();
-       ///this.service = new TravelBriefingService();
+       // TODO inject deps
+       this.service = new TravelBriefingServiceImpl();
     }
 
     @Override

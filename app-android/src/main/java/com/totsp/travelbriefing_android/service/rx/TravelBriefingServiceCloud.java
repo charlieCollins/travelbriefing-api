@@ -1,8 +1,7 @@
-package com.totsp.travelbriefing_android.service;
+package com.totsp.travelbriefing_android.service.rx;
 
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
-import com.totsp.travelbriefing.service.*;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by cecollins on 6/29/16.
  */
-class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
+public class TravelBriefingServiceCloud implements TravelBriefingServiceRxInterface {
 
     public static final String HOST = "https://travelbriefing.org";
 
@@ -37,9 +36,10 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    private static final TravelBriefingServiceInterface SERVICE =
-            RETROFIT.create(TravelBriefingServiceInterface.class);
+    private static final TravelBriefingServiceRxInterface SERVICE =
+            RETROFIT.create(TravelBriefingServiceRxInterface.class);
 
+        
     public TravelBriefingServiceCloud() {
         System.out.println("TravelBriefingServiceCloud created");
     }
@@ -55,7 +55,7 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
             @Override
             public void accept(@NonNull List<CountryListItem> countryListItemList) throws Exception {
                 System.out.println("   CACHE SAVE");
-                com.totsp.travelbriefing.service.TravelBriefingServiceCache.cacheCountryList(countryListItemList);
+                TravelBriefingServiceCache.cacheCountryList(countryListItemList);
             }
         });
 
@@ -74,7 +74,7 @@ class TravelBriefingServiceCloud implements TravelBriefingServiceInterface {
                     @Override
                     public void accept(@NonNull Country country) throws Exception {
                         System.out.println("   CACHE SAVE");
-                        com.totsp.travelbriefing.service.TravelBriefingServiceCache.cacheCountry(countryName, country);
+                        TravelBriefingServiceCache.cacheCountry(countryName, country);
                     }
                 });
 

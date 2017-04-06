@@ -1,10 +1,9 @@
-package com.totsp.travelbriefing_android.service;
+package com.totsp.travelbriefing_android.service.rx;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.model.CountryListItem;
-import com.totsp.travelbriefing.service.TravelBriefingServiceInterface;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,7 +13,7 @@ import io.reactivex.Maybe;
 /**
  * Created by cecollins on 6/29/16.
  */
-class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
+public class TravelBriefingServiceCache implements TravelBriefingServiceRxInterface {
 
     private static final String CACHE_KEY_COUNTRYLIST = "clkk";
 
@@ -55,7 +54,7 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
         CACHE_COUNTRYLIST.put(CACHE_KEY_COUNTRYLIST, countries);
     }
 
-    @Override
+    //@Override
     public Maybe<List<CountryListItem>> getCountries() {
         System.out.println("TravelBriefingServiceCache getCountries");
         List<CountryListItem> countries = CACHE_COUNTRYLIST.getIfPresent(CACHE_KEY_COUNTRYLIST);
@@ -69,7 +68,7 @@ class TravelBriefingServiceCache implements TravelBriefingServiceInterface {
         return Maybe.empty();       
     }
 
-    @Override
+    //@Override
     public Maybe<Country> getCountry(final String countryName) {
         System.out.println("TravelBriefingServiceCache getCountry:" + countryName);
         Country country = CACHE_COUNTRY.getIfPresent(countryName);       

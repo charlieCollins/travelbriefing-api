@@ -28,15 +28,17 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
 
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-
-    // from api
+    // needed for apimin and gson (will be same on objective c, via j2objc)
     compile 'com.google.guava:guava:19.0'
     compile 'com.google.code.gson:gson:2.8'
+    
+    // needed for networking here
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
     compile 'io.reactivex.rxjava2:rxjava:2.0.6'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    
     compile project(path: ':api')
 }

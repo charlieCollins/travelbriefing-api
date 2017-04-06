@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.totsp.travelbriefing.model.Country;
 import com.totsp.travelbriefing.service.TravelBriefingService;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 
@@ -90,6 +89,7 @@ public class ItemDetailFragment extends Fragment {
         // TODO check is connected
         // TODO rxandroid dep?
         // TODO rxandroid pattern
+        /*
         TravelBriefingService service = ((TravelBriefingApplication)getActivity().getApplication()).getService();
         Subscriber<Country> subscriber = new Subscriber<Country>() {
             @Override
@@ -114,6 +114,7 @@ public class ItemDetailFragment extends Fragment {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
+                */
     }
 
     private void log(String message) {
