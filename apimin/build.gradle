@@ -1,0 +1,52 @@
+
+buildscript {
+    
+    repositories {
+        flatDir dirs: './libs'
+    }   
+
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.totsp'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.7
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.+'
+
+    // TODO use the versions j2objc supports  
+    // keep the api min to only stuff j2objc includes (keep it simple)
+    compile 'com.google.guava:guava:21.0'
+    compile 'com.google.code.gson:gson:2.8.0'   
+}
+
+// copies jar created here to the related android project libs
+task updateAndroidLibs (dependsOn: jar, type: Copy) {
+    //println "****** BUILD and COPY: [$jar.archivePath]"
+    //tried $archivePath and variations on $archiveName, all fail?
+    from './build/libs/apimin-1.0-SNAPSHOT.jar' 
+    into '../app-android/libs'
+}
+
+// creates a jar with source
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+// creates a jar with dependencies
+task fatJar(type: Jar) {
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+// TODO write a one off task that invokes j2objc and creates static lib for iOS import from the api

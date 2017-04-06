@@ -1,0 +1,14 @@
+../src/main/java/com/totsp/travelbriefing/model/Advisory.java
+../src/main/java/com/totsp/travelbriefing/model/Country.java
+../src/main/java/com/totsp/travelbriefing/model/CountryListItem.java
+../src/main/java/com/totsp/travelbriefing/model/Currency.java
+../src/main/java/com/totsp/travelbriefing/model/Electricity.java
+../src/main/java/com/totsp/travelbriefing/model/Language.java
+../src/main/java/com/totsp/travelbriefing/model/Map.java
+../src/main/java/com/totsp/travelbriefing/model/Name.java
+../src/main/java/com/totsp/travelbriefing/model/Telephone.java
+../src/main/java/com/totsp/travelbriefing/model/Timezone.java
+../src/main/java/com/totsp/travelbriefing/model/Vaccination.java
+../src/main/java/com/totsp/travelbriefing/model/Water.java
+../src/main/java/com/totsp/travelbriefing/service/TravelBriefingServiceInterface.java
+
