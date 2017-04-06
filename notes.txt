@@ -1,0 +1,7 @@
+IDEAS
+
+use apimin with android and ios, have networking impl native
+use gson transpiled library too (build it without tests and include?) 
+
+simple example that makes a single apicall and uses model and gson that are transpiled
+leave networking layer to native
